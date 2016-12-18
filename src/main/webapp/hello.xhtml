@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>JSF 2.0</title>
+        <h:outputStylesheet library="default" name="css/form.css"  />
+       
+    </h:head>
+    <h:body>
+        <h1>First example with JSF 2</h1>
+        <h:form>
+           <h:inputText value="#{helloBean.firstname}" />
+           <h:commandButton value="welcome us" action="welcome" />
+           
+        </h:form>
+    </h:body>
+</html>
