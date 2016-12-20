@@ -1,19 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.mamad</groupId>
-  <artifactId>jsfspring4hibernate4maven</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <name>jsf spring4 hibernate4 maven webapp</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mamad</groupId>
+	<artifactId>jsfspring4hibernate4maven</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>jsf spring4 hibernate4 maven webapp</name>
 
-<properties>
+	<properties>
 		<java.version>1.8</java.version>
 		<spring.version>4.1.6.RELEASE</spring.version>
 		<jsf2.version>2.2.10</jsf2.version>
 		<hibernate.version>4.3.8.Final</hibernate.version>
 		<mysqlconnector.version>5.1.34</mysqlconnector.version>
 	</properties>
- 
+
 	<dependencies>
 		<!-- Spring and Transactions -->
 		<dependency>
@@ -21,54 +22,54 @@
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- spring context -->
- 		<dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<!-- Spring ORM support -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
- 
+
 		<!-- JSF Dependencies -->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
 			<version>${jsf2.version}</version>
 		</dependency>
- 
+
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
 			<version>${jsf2.version}</version>
 		</dependency>
- 
+
 		<!-- hibernate 4 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
- 
+
 		<!-- database pool -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.0</version>
 		</dependency>
- 
+
 		<!-- mysql java connector -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -76,7 +77,7 @@
 			<version>${mysqlconnector.version}</version>
 		</dependency>
 	</dependencies>
- 
+
 	<build>
 		<finalName>jsf-spring-hibernate</finalName>
 		<plugins>
@@ -88,6 +89,29 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<!-- plugin for deployment -->
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<!-- configuration -->
+				<configuration>
+					<url>http://localhost:8080/manager/text</url>
+					<server>TomcatServer</server>
+					<path>/jsfapp</path>
+					<username>admin</username>
+					<password>admin</password>
+				</configuration>
+			</plugin>
+
+			<!-- when executing mvn tomcat:deploy ==> mvn tomcat7:deploy -Dtomcat.username=tomcatscript -Dtomcat.password=s3cret-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+			</plugin>
+
+			
 		</plugins>
 	</build>
 </project>
