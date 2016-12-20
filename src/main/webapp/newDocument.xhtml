@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>JSF 2.0</title>
+	<h:outputStylesheet library="default" name="css/form.css" />
+
+</h:head>
+<h:body>
+
+<h:form>
+    <p:panel header="Validate">
+        <!-- <p:messages /> -->
+ 
+        <h:panelGrid columns="3" cellpadding="5">
+            <h:outputLabel for="name" value="Name:" />
+            <p:inputText id="name" value="#{beanValidationView.name}" label="Name"/>
+            <p:message for="name" />
+           <!--  <h:outputText value="#{beanValidationView.name}" /> -->
+ 
+            <h:outputLabel for="age" value="Age:" />
+            <p:inputText id="age" value="#{beanValidationView.age}" label="Age"/>
+            <p:message for="age" />
+            <!-- <h:outputText value="#{beanValidationView.age}" /> -->
+ 
+            <h:outputLabel for="amount" value="Montant:" />
+            <p:inputText id="amount" value="#{beanValidationView.amount}" label="Amount"/>
+            <p:message for="amount" />
+            <!-- <h:outputText value="#{beanValidationView.amount}" /> -->
+ 
+            <h:outputLabel for="psstDate" value="Date Début"/>                                
+            <p:inputText id="psstDate" value="#{beanValidationView.pastDate}">
+                <f:convertDateTime pattern="MM/dd/yyyy" />
+            </p:inputText> 
+            <p:message for="psstDate" />
+            <!-- <h:outputText/> -->
+ 
+            <h:outputLabel for="futureDate" value="Date Fin"/>                                
+            <p:inputText id="futureDate" value="#{beanValidationView.futureDate}">
+                <f:convertDateTime pattern="MM/dd/yyyy" />
+            </p:inputText> 
+            <p:message for="futureDate" />
+            <!-- <h:outputText/> -->
+ 
+        </h:panelGrid>
+ 
+        <p:commandButton value="Save" ajax="false" icon="ui-icon-check" validateClient="true"/>
+    </p:panel>
+</h:form>
+
+</h:body>
+</html>

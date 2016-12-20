@@ -24,7 +24,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 	</context-param>
 
 	<context-param>
-		<param-name>facelets.SKIP_COMMENTS</param-name>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
 		<param-value>true</param-value>
 	</context-param>
 

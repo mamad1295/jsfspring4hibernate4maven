@@ -10,5 +10,6 @@ public interface UserDetailsService {
     public UserDetails getuserDetails(int id);
 
     public List<UserDetails> getAllUserDetails();
+    public void saveUserDetails(UserDetails userDetails);
 
 }

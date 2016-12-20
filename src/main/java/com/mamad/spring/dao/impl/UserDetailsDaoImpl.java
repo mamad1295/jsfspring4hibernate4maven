@@ -44,4 +44,11 @@ public class UserDetailsDaoImpl implements UserDetailsDao {
         return sessionFactory;
     }
 
+    @Transactional
+	@Override
+	public void saveUserDetails(UserDetails userDetails) {
+		sessionFactory.getCurrentSession().save(userDetails);
+		
+	}
+
 }

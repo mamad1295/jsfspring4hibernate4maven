@@ -26,5 +26,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetailsDao getUserDetailsDao() {
         return userDetailsDao;
     }
+    
+    public void saveUserDetails(UserDetails userDetails){
+    	userDetailsDao.saveUserDetails(userDetails);
+    }
 
 }

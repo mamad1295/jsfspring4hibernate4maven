@@ -25,7 +25,7 @@ public class UserDetailsMBean implements Serializable {
 
 	public UserDetails getUserDetails() {
 		if (userDetails == null) {
-			int id = 7;// should come from UI
+			int id = 2;// will be implemented from UI
 			userDetails = userDetailsService.getuserDetails(id);
 		}
 		return userDetails;
@@ -48,6 +48,16 @@ public class UserDetailsMBean implements Serializable {
 
 	public void setUserDetailsService(UserDetailsService userDetailsService) {
 		this.userDetailsService = userDetailsService;
+	}
+	
+	public void saveUserDetails(){
+		UserDetails userDetails = new UserDetails();
+		userDetails.setFirstName(this.userDetails.getFirstName());
+		userDetails.setLastName(this.userDetails.getLastName());
+		userDetails.setEmail(this.userDetails.getEmail());
+		userDetails.setDob(this.userDetails.getDob());
+		
+		this.userDetailsService.saveUserDetails(userDetails);
 	}
 
 }
