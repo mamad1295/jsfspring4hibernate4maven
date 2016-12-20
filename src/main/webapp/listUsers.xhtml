@@ -10,10 +10,10 @@
 	<h2>List of Users</h2>
 	<p>
 		<h:dataTable value="#{userDetailsMBean.userDetailsList}"
-			var="userDetails">
+			var="userDetails" cellspacing="5" width="60%" rowClasses="paire,impaire" headerClass="title">
 			<h:column>
 				<f:facet name="header">
-                        ID
+                       <h:outputText value="ID" />
                     </f:facet>
 				<h:outputText value="#{userDetails.id}" />
 			</h:column>

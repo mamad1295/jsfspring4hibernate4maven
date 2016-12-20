@@ -7,6 +7,9 @@
     </h:head>
     <h:body>
     	<h1>First example JSF 2.0 - welcome.xhtml</h1>
-    	<p>Welcome #{helloBean.firstname} !</p>
+    	<p>Welcome #{helloBean.firstname} !</p><br/>
+    	<h:outputText id="outpuMessage" value="#{helloBean.firstname}"></h:outputText>
+    	
+    	
     </h:body>
 </html>

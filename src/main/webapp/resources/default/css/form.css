@@ -8,3 +8,14 @@ h1 {
 p {
 	background-color: #00ffff;
 }
+
+.title {
+	background-color: #000000;
+	color: #FFFFFF;
+}
+.paire {
+	background-color: #EFEFEF
+}
+.impaire {
+	background-color: #CECECE
+}
