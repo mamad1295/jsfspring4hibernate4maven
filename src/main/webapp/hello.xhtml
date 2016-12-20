@@ -10,8 +10,16 @@
         <h1>First example with JSF 2</h1>
         <h:form>
            <h:inputText value="#{helloBean.firstname}" />
-           <h:commandButton value="welcome us" action="welcome" />
+           <h:commandButton value="welcome us" action="welcome" /><br/>
            
         </h:form>
+        
+        <h:form>
+        	<h:commandLink action="#{mainController.moveToWelcome}" value="Welcome (forward)"></h:commandLink><br/>
+        	<h:commandLink action="welcome?faces-redirect=true" value="Welcome (redirect)"></h:commandLink><br/>
+           <h:commandLink action="#{mainController.moveToListUsers}" value="Users"></h:commandLink><br/>
+        </h:form>
+        
+        
     </h:body>
 </html>

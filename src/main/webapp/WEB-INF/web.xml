@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 
+	<welcome-file-list>
+		<welcome-file>hello.xhtml</welcome-file>
+	</welcome-file-list>
 	<!-- load spring configuration -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -14,6 +17,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+	<!-- Deployment -->
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
